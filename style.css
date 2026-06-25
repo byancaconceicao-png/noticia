@@ -1,0 +1,113 @@
+/* Reset básico e estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Header e Footer */
+header, footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Notícia - Layout Principal */
+.noticia-container {
+    display: flex;
+    flex-direction: column; /* Layout em coluna no telemóvel */
+    padding: 2rem 0;
+}
+
+/* No desktop, usar Grid para a publicidade lateral */
+@media (min-width: 768px) {
+    .noticia-container {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 2rem;
+    }
+}
+
+.noticia {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Imagens Semânticas com object-fit */
+.capa-container {
+    margin: 0 0 1.5rem 0;
+    width: 100%;
+    height: auto;
+}
+
+.capa-container img {
+    width: 100%;
+    height: auto; /* Mantém a proporção de 16:9 se o ficheiro for correto */
+    object-fit: cover; /* Garante que preenche sem distorção */
+    border-radius: 4px;
+}
+
+.materia-img-container {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.materia-img-container img {
+    width: 100%;
+    max-width: 400px; /* Limita o tamanho máximo */
+    height: auto; /* Mantém a proporção 1:1 */
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Estilos de Texto */
+.headline {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.lead {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-bottom: 1.5rem;
+}
+
+.corpo-noticia p {
+    margin-bottom: 1rem;
+}
+
+/* Publicidade */
+.publicidade-container {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .publicidade-container {
+        margin-top: 0;
+    }
+}
+
+.publicidade-container img {
+    max-width: 100%; /* Adapta ao espaço disponível */
+    height: auto;
+    object-fit: contain; /* Mostra o banner completo */
+}
